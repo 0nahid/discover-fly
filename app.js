@@ -3,12 +3,16 @@ function handleTicketChange(ticket, isIncrease) {
     const userTicket = document.getElementById(ticket + '-count');
     const ticketNumber = parseInt(userTicket.value);
     let ticketNewCount = ticketNumber;
+    // validation & trigger response
     if (isIncrease == true) {
         ticketNewCount = ticketNumber + 1;
+    };
+    if (ticketNumber < 0) {
+        ticketNewCount = ticketNumber * -1;
     }
     if (isIncrease == false && ticketNewCount > 0) {
         ticketNewCount = ticketNumber - 1;
-    }
+    };
     userTicket.value = ticketNewCount;
     calculateTicketPrice();
 };
