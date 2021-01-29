@@ -16,6 +16,7 @@ function handleTicketChange(ticket, isIncrease) {
     userTicket.value = ticketNewCount;
     calculateTicketPrice();
 };
+
 // Calculate user ticker price
 function calculateTicketPrice() {
     const firstClassTicketNumber = getTicket('firstClass');
@@ -27,6 +28,7 @@ function calculateTicketPrice() {
     const ticketTotal = subTotal + ticketTax;
     document.getElementById('ticket-total').innerText = '$' + ticketTotal;
 }
+
 // Get user ticket number
 function getTicket(ticket) {
     const userTicket = document.getElementById(ticket + '-count');
