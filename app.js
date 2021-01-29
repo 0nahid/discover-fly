@@ -18,6 +18,10 @@ function calculateTicketPrice() {
     const economyTicketNumber = getTicket('economy');
     const subTotal = firstClassTicketNumber * 150 + economyTicketNumber * 100;
     document.getElementById("sub-total").innerText = '$' + subTotal;
+    const ticketTax = subTotal * 0.1;
+    document.getElementById('ticket-tax').innerText = '$' + ticketTax;
+    const ticketTotal = subTotal + ticketTax;
+    document.getElementById('ticket-total').innerText = '$' + ticketTotal;
 }
 // Get user ticket number
 function getTicket(ticket) {
