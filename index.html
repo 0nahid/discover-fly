@@ -51,10 +51,11 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="" >
+                    <input id="firstClass-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
+                <div class="plus-minus-btn" style="cursor: pointer;">
+                    <p><span onclick="handleTicketChange('firstClass',true)">+</span> <span
+                            onclick="handleTicketChange('firstClass',false)">-</span></p>
                 </div>
             </div>
 
@@ -64,7 +65,8 @@
                     <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn" style="cursor: pointer;">
-                    <p> <span onclick="handleTicketChange(true)">+</span> <span onclick="handleTicketChange(false)" > -</span> </p>
+                    <p> <span onclick="handleTicketChange('economy',true)">+</span> <span
+                            onclick="handleTicketChange('economy',false)"> -</span> </p>
                 </div>
             </div>
             <div class="calculations">
