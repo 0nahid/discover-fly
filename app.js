@@ -9,7 +9,7 @@ function handleTicketChange(ticket, isIncrease) {
     };
     if (ticketNumber < 0) {
         ticketNewCount = ticketNumber * -1;
-    }
+    };
     if (isIncrease == false && ticketNewCount > 0) {
         ticketNewCount = ticketNumber - 1;
     };
@@ -27,11 +27,11 @@ function calculateTicketPrice() {
     document.getElementById('ticket-tax').innerText = '$' + ticketTax;
     const ticketTotal = subTotal + ticketTax;
     document.getElementById('ticket-total').innerText = '$' + ticketTotal;
-}
+};
 
 // Get user ticket number
 function getTicket(ticket) {
     const userTicket = document.getElementById(ticket + '-count');
     const userTicketNumber = parseInt(userTicket.value);
     return userTicketNumber;
-}
+};
