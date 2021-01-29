@@ -1,3 +1,4 @@
+// Handle increase decrease button trigger
 function handleTicketChange(ticket, isIncrease) {
     const userTicket = document.getElementById(ticket + '-count');
     const ticketNumber = parseInt(userTicket.value);
@@ -11,12 +12,16 @@ function handleTicketChange(ticket, isIncrease) {
     userTicket.value = ticketNewCount;
     calculateTicketPrice();
 };
-
+// Calculate user ticker price
 function calculateTicketPrice() {
-    const firstClassTicket = document.getElementById('firstClass-count');
-    const firstClassTicketNumber = parseInt(firstClassTicket.value);
-    const economyTicket = document.getElementById('economy-count');
-    const economyTicketNumber = parseInt(economyTicket.value);
+    const firstClassTicketNumber = getTicket('firstClass');
+    const economyTicketNumber = getTicket('economy');
     const subTotal = firstClassTicketNumber * 150 + economyTicketNumber * 100;
     document.getElementById("sub-total").innerText = '$' + subTotal;
+}
+// Get user ticket number
+function getTicket(ticket) {
+    const userTicket = document.getElementById(ticket + '-count');
+    const userTicketNumber = parseInt(userTicket.value);
+    return userTicketNumber;
 }
